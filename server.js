@@ -5,7 +5,7 @@ dotenv.config();
 const db = require("./database/models/index");
 db.sequelize.sync();
 const errorHandler = require('./middleware/errorHandler');
-
+//test
 const app = express();
 const port = process.env.PORT || 3000;
 
