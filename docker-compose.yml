@@ -1,0 +1,43 @@
+services:
+  app:
+    container_name: apps_be
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    user: "1001:1001"
+    networks:
+      - fullstack
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123t4ng
+      MYSQL_DATABASE: risk_score_calculator
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root123t4ng
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - fullstack
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  fullstack:
+    external: true
+    name: fullstack
+
+
