@@ -40,24 +40,6 @@ INSERT INTO `consequence` VALUES (5, 'Multiple Fatalities', 'Disaster', 75);
 INSERT INTO `consequence` VALUES (6, 'Numerous Fatalities', 'Catastrophe', 100);
 
 -- ----------------------------
--- Table structure for consequences
--- ----------------------------
-DROP TABLE IF EXISTS `consequences`;
-CREATE TABLE `consequences`  (
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
-  `alias` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
-  `weight` double NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of consequences
--- ----------------------------
-
--- ----------------------------
 -- Table structure for exposure
 -- ----------------------------
 DROP TABLE IF EXISTS `exposure`;
@@ -77,40 +59,6 @@ INSERT INTO `exposure` VALUES (3, 'Occasional', 0.6);
 INSERT INTO `exposure` VALUES (4, 'Infrequent', 0.4);
 INSERT INTO `exposure` VALUES (5, 'Rare', 0.2);
 INSERT INTO `exposure` VALUES (6, 'Very Rare', 0.1);
-
--- ----------------------------
--- Table structure for exposures
--- ----------------------------
-DROP TABLE IF EXISTS `exposures`;
-CREATE TABLE `exposures`  (
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
-  `weight` double NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of exposures
--- ----------------------------
-
--- ----------------------------
--- Table structure for probabilities
--- ----------------------------
-DROP TABLE IF EXISTS `probabilities`;
-CREATE TABLE `probabilities`  (
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL,
-  `weight` double NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `createdAt` datetime NOT NULL,
-  `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of probabilities
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for probability
